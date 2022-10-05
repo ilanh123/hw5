@@ -5,7 +5,7 @@ function get_num() {
 
 // given the user number inputs, find that number's factors and add them to an array
 function find_factors(num, factor_list) {
-    for (let i = 1; i < num; i++) {
+    for (let i = 1; i < num/2; i++) {
         if ((num % i) == 0) {
             factor_list.push(i)
         }
