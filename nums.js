@@ -4,8 +4,9 @@ function get_num() {
 }
 
 // given the user number inputs, find that number's factors and add them to an array
+// cycle up to <=num/2 because the largest factor will be (num/2) * 2
 function find_factors(num, factor_list) {
-    for (let i = 1; i < num/2; i++) {
+    for (let i = 1; i <= num/2; i++) {
         if ((num % i) == 0) {
             factor_list.push(i)
         }
