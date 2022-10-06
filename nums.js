@@ -24,8 +24,8 @@ function add_factors(factor_list) {
 
 // determine if both user inputs are 'amicable' by comparing number inputs
 // and the sum of their factors
-function is_amicable(num1, num2, added1, added2) {
-    return ((num1 == added2) && (num2 == added1));
+function is_amicable(num1, num2, sum1, sum2) {
+    return ((num1 == sum2) && (num2 == sum1));
 }
 
 // write the output depending on whether the numbers are 'amicable'
@@ -62,11 +62,11 @@ function run() {
     find_factors(num2, factorList2);
 
     // find each numbers' factors sums
-    added1 = add_factors(factorList1);
-    added2 = add_factors(factorList2);
+    sum1 = add_factors(factorList1);
+    sum2 = add_factors(factorList2);
 
     // determine of numbers are amicable
-    amicability = is_amicable(num1, num2, added1, added2, factorList1, factorList2);
+    amicability = is_amicable(num1, num2, sum1, sum2, factorList1, factorList2);
 
     // call function to show user whether their numbers are amicable
     output(amicability, num1, num2, factorList1, factorList2);
@@ -79,8 +79,8 @@ function run() {
     output_factors(num2, factorList2, factorList2_div);
 
 
-    console.log(num1 + ": " + added1 + " - " + factorList1);
-    console.log(num2 + ": " + added2 + " - " + factorList2);
+    console.log(num1 + ": " + sum1 + " - " + factorList1);
+    console.log(num2 + ": " + sum2 + " - " + factorList2);
 
 }
 
