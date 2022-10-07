@@ -1,6 +1,6 @@
 // Prompt user for number inputs
 function get_num() {
-    return prompt("Give a number");
+    return prompt("Please enter a valid number");
 }
 
 // given the user number inputs, find that number's factors and add them to an array
@@ -42,7 +42,7 @@ function output(amicable, num1, num2, factorList1, factorList2) {
 }
 
 // list the factors of each of the numbers
-function output_factors(num, factor_list, factor_list_div) {
+function print_factors(num, factor_list, factor_list_div) {
     factor_list_div.innerHTML = ("Factors of " + num + ": ");
     for (let i = 0; i < factor_list.length; i++) {
         factor_list_div.innerHTML += (factor_list[i] + " ");
@@ -51,11 +51,11 @@ function output_factors(num, factor_list, factor_list_div) {
 
 // the run function, which is essentially the 'main' of the code and calls respective functions
 function run() {
-    num1 = get_num();
-    num2 = get_num();
+    var num1 = get_num();
+    var num2 = get_num();
 
-    factorList1 = [];
-    factorList2 = [];
+    var factorList1 = [];
+    var factorList2 = [];
 
     // determine each numbers' factors
     find_factors(num1, factorList1);
@@ -75,13 +75,8 @@ function run() {
     factorList2_div = document.getElementById("factorList2");
 
     // call function to list the factors of the numbers
-    output_factors(num1, factorList1, factorList1_div);
-    output_factors(num2, factorList2, factorList2_div);
-
-
-    console.log(num1 + ": " + sum1 + " - " + factorList1);
-    console.log(num2 + ": " + sum2 + " - " + factorList2);
-
+    print_factors(num1, factorList1, factorList1_div);
+    print_factors(num2, factorList2, factorList2_div);
 }
 
 run();
